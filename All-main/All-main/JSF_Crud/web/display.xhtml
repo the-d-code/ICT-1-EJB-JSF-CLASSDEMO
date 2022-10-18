@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Display</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:commandLink value="Add Record" action="form.xhtml"></h:commandLink>
+            <br/><br/>
+            <h:commandLink value="Search Record" action="search.xhtml"></h:commandLink>
+            <h:dataTable var="x" value="#{managedBean.showStud()}"  border="1">
+
+                <h:column>#{x.id}</h:column>
+                <h:column>#{x.name}</h:column>
+                <h:column><h:commandLink  action="#{managedBean.search(x.id)}" value="Edit"></h:commandLink></h:column>
+                <h:column><h:commandLink  action="#{managedBean.delete(x.id)}" value="Delete"></h:commandLink></h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
